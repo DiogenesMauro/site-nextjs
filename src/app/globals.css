@@ -187,6 +187,11 @@ a {
     align-items: center;
     gap: 4px;
     padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+.linha input[type="button"] {
+    cursor: pointer;
 }
 
 @media (width < 600px) {
@@ -207,7 +212,7 @@ a {
     .head-content {
         width: 100%;
         flex-direction: column;
-        gap: 35px;
+        gap: 50px;
         align-items: flex-start;
         padding: 20px;
         height: 100%;
