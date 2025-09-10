@@ -1,5 +1,5 @@
 "use client";
-import { DropdownDias } from "./dropdown";
+import { SelectorDias } from "./seletor";
 import { Botao } from "./header";
 import { Linhas } from "./linhas";
 import ReactLenis from "@studio-freight/react-lenis";
@@ -10,7 +10,7 @@ const Society = () => {
             <div className="full-container society">
                 <div className="backdrop-blur-3xl">
                     {/*DROPDOWN*/}
-                    <DropdownDias />
+                    <SelectorDias />
 
                     {/*HEADER*/}
                     <Botao />

@@ -238,6 +238,24 @@ a {
 
 }
 
+/*SELETOR DIAS*/
+button.setaesquerda {
+    background-color: rgb(30, 41, 57, 90%);
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+button.setadireita {
+    background-color: rgb(30, 41, 57, 90%);
+    clip-path: polygon(0 0, 50% 0, 100% 100%, 0 100%);
+    overflow: hidden;
+}
+
+button.setaesquerda:hover,
+button.setadireita:hover {
+    background-color: rgba(38, 51, 72, 0.9)
+}
+
+
 /*Animação*/
 ::view-transition-old(root),
 ::view-transition-new(root) {
