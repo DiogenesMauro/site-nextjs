@@ -29,13 +29,10 @@ export function DropdownDias() {
             {/* Botão principal */}
             <button
                 onClick={toggleDropdown}
-                className="w-full h-10 bg-neutral-900 text-white !px-4 !py-3 rounded-lg flex justify-between items-center shadow-md hover:bg-neutral-800 transition"
+                className="w-full h-10 bg-neutral-900 border-1 border-x-neutral-500/50 border-y-neutral-700/70 text-white !px-4 !py-3 rounded-lg flex justify-center items-center shadow-md hover:bg-neutral-800 transition"
             >
                 <span className="uppercase">{diaSelecionado}</span>
-                <ChevronDown
-                    size={20}
-                    className={`transition-transform ${aberto ? "rotate-180" : ""}`}
-                />
+
             </button>
 
             {/* Dropdown animado */}
@@ -46,18 +43,19 @@ export function DropdownDias() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute w-full mt-1 bg-neutral-800 text-white rounded-lg shadow-lg overflow-hidden z-20 flex flex-col gap-1"
+                        className="absolute w-full mt-2 z-20 flex flex-col gap-0.5"
                     >
                         {diasSemana.map((dia) => (
                             <li
                                 key={dia}
                                 onClick={() => selecionarDia(dia)}
-                                className="px-4 py-3 hover:bg-neutral-700 cursor-pointer transition"
+                                className="w-full h-10 bg-neutral-900 border-1 border-x-neutral-500/50 border-y-neutral-700/70 hover:bg-neutral-700 text-white !px-4 !py-2 rounded-lg shadow cursor-pointer text-center transition"
                             >
                                 {dia}
                             </li>
                         ))}
                     </motion.ul>
+
                 )}
             </AnimatePresence>
         </div>
