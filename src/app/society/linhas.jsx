@@ -90,23 +90,29 @@ export function Linhas() {
                             className="linha h-15 max-w-[928px] w-5xl max-md:w-[706px] max-sm:w-95 bg-gray-400/10 text-lg flex items-center"
                         >
                             <p className="flex-1">{linha.horario}</p>
-                            <input
-                                className="bg-neutral-900 w-full h-10 rounded-lg !pl-2 flex-3"
-                                type="text"
-                                name="Nome"
-                                placeholder="Nome"
-                            />
-                            <input
-                                className="bg-neutral-900 w-full h-10 rounded-lg !pl-2 flex-1"
-                                type="password"
-                                name="Senha"
-                                placeholder="Pass"
-                            />
-                            <input
-                                className="bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-800 border-1 border-x-neutral-500/50 border-y-neutral-700/70 w-12 h-10 rounded-lg"
-                                type="button"
-                                value="X"
-                            />
+                            <div className="nome flex-3">
+                                <input
+                                    className="bg-neutral-900 w-sm h-10 rounded-lg !pl-2"
+                                    type="text"
+                                    name="Nome"
+                                    placeholder="Nome"
+                                />
+                            </div>
+                            <div className="senha  flex-1">
+                                <input
+                                    className="bg-neutral-900 w-full h-10 rounded-lg !pl-2"
+                                    type="password"
+                                    name="Senha"
+                                    placeholder="Pass"
+                                />
+                            </div>
+                            <div className="cancel flex-1">
+                                <input
+                                    className="bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-800 border-1 border-x-neutral-500/50 border-y-neutral-700/70 w-12 h-10 rounded-lg"
+                                    type="button"
+                                    value="X"
+                                />
+                            </div>
                         </div>
                     ))
                 )}

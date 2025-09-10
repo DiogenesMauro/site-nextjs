@@ -8,7 +8,7 @@ const Society = () => {
     return (
         <ReactLenis root>
             <div className="full-container society">
-                <div className="backdrop-blur-3xl">
+                <div className="scale-90 backdrop-blur-3xl">
                     {/*DROPDOWN*/}
                     <SelectorDias />
 

@@ -6,7 +6,7 @@ export function Botao() {
     const [selecionado, setSelecionado] = useState("1");
 
     return (
-        <div className="head !pb-4 max-w-[928px]">
+        <div className="head max-w-[928px]">
             <div className="h-15 w-1 bg-gray-800/90"></div>
             <div className="h-15 w-1.5 bg-gray-800/90"></div>
             <div className="h-15 w-3 bg-gray-800/90"></div>
