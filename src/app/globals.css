@@ -32,6 +32,7 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 9999;
 }
 
 .links {
@@ -134,8 +135,6 @@ a {
     background-image: url(/config.jpg);
     background-repeat: no-repeat;
 }
-
-
 
 /*headers*/
 .head {
@@ -278,26 +277,138 @@ button.setadireita:hover svg {
 }
 
 .cadsoc {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    right: 0;
+    transform: translate(-50%);
+    border-radius: 8px;
     border: 2px solid rgb(70, 70, 70);
     box-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px red;
     background-image: radial-gradient(rgb(75, 75, 75) 10%, rgb(26, 26, 26));
-    cursor: pointer;
     overflow: hidden;
     /* transição apenas para expansão */
     transition: width 0.3s ease, height 0.3s ease, border-radius 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cadsoc.expanded {
-    width: 300px;
+    width: 344px;
     height: 480px;
     border-radius: 10px;
     box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red;
 }
 
+/*--CADASTROS--*/
+.cadastro {
+    max-height: 480px;
+    width: 340px;
+    background-color: var(--color-menu);
+    border-radius: 8px;
+    border-top: 2px solid rgba(255, 255, 255, .2);
+    border-bottom: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(10px);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+}
 
+.top {
+    padding-top: 2%;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.headcad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 2%;
+}
+
+.corpo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.linha1 {
+    display: flex;
+    padding: 0 2%;
+    font-size: 18px;
+}
+
+.nome,
+.rg,
+.cpf,
+.nasc,
+.tel,
+.datacad,
+.cidcad,
+.email {
+    padding-left: 1%;
+}
+
+.campo {
+    display: flex;
+    gap: 10px;
+    /* espaço entre RG e CPF */
+    width: 100%;
+}
+
+.jumpline {
+    display: flex;
+    flex-direction: column;
+    /* label em cima, input embaixo */
+    flex: 1;
+    /* cada um ocupa metade da largura */
+}
+
+.inputcad {
+    flex: 1;
+    width: 100%;
+}
+
+.cadastro input[type="text"],
+input[type="email"] {
+    width: 100%;
+    height: 24px;
+    /* ajuste para a altura desejada */
+    margin: 8px 0;
+    padding-left: 4px;
+    font-size: 16px;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+    text-shadow: 1px 1px rgb(97, 97, 97);
+    transition: box-shadow 0.2s ease-in-out, background 0.2s ease-in-out;
+}
+
+.cadastro input[type="text"]:hover,
+input[type="email"]:hover {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+.cadastro input[type="text"]:focus,
+input[type="email"]:focus {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 1);
+    outline: none;
+}
+
+
+.btncad {
+    position: relative;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btncad input[type="submit"] {
+    margin-bottom: 3%;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+}
 
 /*Animação*/
 ::view-transition-old(root),
