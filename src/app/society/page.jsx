@@ -7,7 +7,7 @@ import ReactLenis from "@studio-freight/react-lenis";
 const Society = () => {
     return (
         <ReactLenis root>
-            <div className="full-container society">
+            <div className="table society">
                 <div className="scale-90 backdrop-blur-3xl">
                     {/*DROPDOWN*/}
                     <SelectorDias />
@@ -19,6 +19,7 @@ const Society = () => {
                     <Linhas />
 
                 </div>
+                ...
             </div>
         </ReactLenis>
     )

@@ -79,7 +79,7 @@ a {
     will-change: transform;
 }
 
-.full-container.society {
+.table.society {
     width: 100vw;
     height: 100vh;
     background-color: var(--bg);
@@ -87,7 +87,7 @@ a {
     justify-content: center;
     align-items: center;
     text-align: center;
-    flex-direction: column;
+    flex-direction: row;
     background-image: url(/spink.png);
     background-repeat: no-repeat;
     background-size: 15%;
@@ -95,7 +95,7 @@ a {
 
 }
 
-.full-container.churrasqueira {
+.table.churrasqueira {
     width: 100vw;
     height: 100vh;
     background-color: var(--bg);
@@ -109,7 +109,7 @@ a {
     background-position: 4% 90%;
 }
 
-.full-container.ocorrencia {
+.table.ocorrencia {
     width: 100vw;
     height: 100vh;
     background-color: var(--bg);
@@ -123,7 +123,7 @@ a {
     background-position: 4% 90%;
 }
 
-.full-container.config {
+.table.config {
     width: 100vw;
     height: 100vh;
     background-color: var(--bg);
@@ -251,7 +251,35 @@ button.setadireita {
 
 button.setaesquerda:hover,
 button.setadireita:hover {
-    background-color: rgba(38, 51, 72, 0.9)
+    background-color: rgba(38, 51, 72, 0.9);
+}
+
+button.setaesquerda:hover svg {
+    animation: setaEsquerda 0.5s infinite alternate;
+}
+
+@keyframes setaEsquerda {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-5px);
+    }
+}
+
+button.setadireita:hover svg {
+    animation: setaDireita 0.5s infinite alternate;
+}
+
+@keyframes setaDireita {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(5px);
+    }
 }
 
 

@@ -5,7 +5,7 @@ import ReactLenis from "@studio-freight/react-lenis";
 const Churras = () => {
     return (
         <ReactLenis root>
-            <div className="full-container churrasqueira">
+            <div className="table churrasqueira">
 
             </div>
         </ReactLenis>
