@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Inputmask from "inputmask";
 import { useEffect, useRef, useState } from "react";
 
 export function CadSoc() {
@@ -7,6 +8,26 @@ export function CadSoc() {
     const [isExpanded, setIsExpanded] = useState(false);
     const clickTimer = useRef(null);
     const isDragging = useRef(false);
+
+    // Máscaras aplicadas apenas quando o formulário é expandido
+    useEffect(() => {
+        if (isExpanded) {
+            const cpfInput = document.getElementById("cpf");
+            if (cpfInput) Inputmask("999.999.999-99").mask(cpfInput);
+
+            const rgInput = document.getElementById("rg");
+            if (rgInput) Inputmask("99.999.999-9").mask(rgInput);
+
+            const telInput = document.getElementById("telefone");
+            if (telInput) Inputmask("(99) 99999-9999").mask(telInput);
+
+            const nascInput = document.getElementById("nasc");
+            if (nascInput) Inputmask("99/99/9999").mask(nascInput);
+
+            const datacadInput = document.getElementById("datacad");
+            if (datacadInput) Inputmask("99/99/9999").mask(datacadInput);
+        }
+    }, [isExpanded]);
 
     useEffect(() => {
         const updateConstraints = () => {
@@ -138,12 +159,12 @@ export function CadSoc() {
                                 </div>
 
                                 <div className="jumpline">
-                                    <div className="cidcad">Cidade/UF</div>
+                                    <div className="cidcad">Cidade e Estado</div>
                                     <div className="inputcad">
                                         <input
                                             type="text"
                                             style={{ textAlign: "center" }}
-                                            placeholder="Ex: Mogi das Cruzes/SP"
+                                            placeholder="Cidade/UF"
                                             required
                                             minLength={5}
                                         />
