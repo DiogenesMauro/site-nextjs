@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
+    "@heroicons/react": "^2.2.0",
     "@studio-freight/react-lenis": "^0.0.47",
     "framer-motion": "^12.23.12",
     "gsap": "^3.13.0",
