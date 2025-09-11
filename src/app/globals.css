@@ -249,11 +249,6 @@ button.setadireita {
     overflow: hidden;
 }
 
-button.setaesquerda:hover,
-button.setadireita:hover {
-    background-color: rgba(38, 51, 72, 0.9);
-}
-
 button.setaesquerda:hover svg {
     animation: setaEsquerda 0.5s infinite alternate;
 }
@@ -281,6 +276,27 @@ button.setadireita:hover svg {
         transform: translateX(5px);
     }
 }
+
+.cadsoc {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid rgb(70, 70, 70);
+    box-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px red;
+    background-image: radial-gradient(rgb(75, 75, 75) 10%, rgb(26, 26, 26));
+    cursor: pointer;
+    overflow: hidden;
+    /* transição apenas para expansão */
+    transition: width 0.3s ease, height 0.3s ease, border-radius 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cadsoc.expanded {
+    width: 300px;
+    height: 480px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red;
+}
+
 
 
 /*Animação*/

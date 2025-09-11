@@ -59,7 +59,7 @@ export function SelectorDias() {
             </button>
 
             {/* Texto animado */}
-            <div className="relative w-56 h-9 bg-gray-800/40 flex items-center justify-center overflow-hidden">
+            <div className="relative w-56 h-9 bg-gray-800/90 flex items-center justify-center overflow-hidden">
                 <AnimatePresence custom={direcao} mode="popLayout">
                     <motion.span
                         key={diaSelecionado}

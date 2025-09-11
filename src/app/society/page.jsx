@@ -3,6 +3,8 @@ import { SelectorDias } from "./seletor";
 import { Botao } from "./header";
 import { Linhas } from "./linhas";
 import ReactLenis from "@studio-freight/react-lenis";
+import { AnimatedBox, CadSoc } from "./cadastro";
+
 
 const Society = () => {
     return (
@@ -19,7 +21,9 @@ const Society = () => {
                     <Linhas />
 
                 </div>
-                ...
+                <div className="flex absolute" >
+                    <CadSoc />
+                </div>
             </div>
         </ReactLenis>
     )
