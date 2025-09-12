@@ -315,6 +315,11 @@ button.setadireita:hover svg {
     font-weight: 600;
 }
 
+.topblock {
+    font-size: 24px;
+    font-weight: 600;
+}
+
 .headcad {
     display: flex;
     justify-content: center;
@@ -407,6 +412,28 @@ input[type="email"]:focus {
     width: 100px;
     height: 40px;
     cursor: pointer;
+}
+
+.cadblock {
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    left: 60px;
+    transform: translate(-50%);
+    border-radius: 8px;
+    border: 2px solid rgb(70, 70, 70);
+    box-shadow: 0 0 5px rgb(0, 200, 255), 0 0 10px rgb(0, 200, 255), 0 0 20px rgb(0, 200, 255);
+    background-image: radial-gradient(rgb(75, 75, 75) 10%, rgb(26, 26, 26));
+    overflow: hidden;
+    /* transição apenas para expansão */
+    transition: width 0.3s ease, height 0.3s ease, border-radius 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cadblock.expanded {
+    width: 344px;
+    height: 480px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(0, 200, 255), 0 0 20px rgb(0, 200, 255), 0 0 30px rgb(0, 200, 255);
 }
 
 /*Animação*/

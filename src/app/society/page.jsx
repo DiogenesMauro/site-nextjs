@@ -4,7 +4,7 @@ import { Botao } from "./header";
 import { Linhas } from "./linhas";
 import ReactLenis from "@studio-freight/react-lenis";
 import { AnimatedBox, CadSoc } from "./cadastro";
-
+import { CadBlock } from "./block";
 
 const Society = () => {
     return (
@@ -23,6 +23,7 @@ const Society = () => {
                 </div>
                 <div className="flex absolute" >
                     <CadSoc />
+                    <CadBlock />
                 </div>
             </div>
         </ReactLenis>
