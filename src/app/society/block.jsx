@@ -144,12 +144,12 @@ export function CadBlock() {
                                 <input type="checkbox" name="block8" id="block8" />
                             </div>
                         </div>
-                        <div className="motivo">
+                        <div className="motivo !mx-2 !mb-2">
                             <p>Motivo</p>
-                            <input className="bg-neutral-900 w-80 rounded-lg !pl-2" type="text" name="motivo" id="motivo" />
+                            <input type="text" name="motivo" id="motivo" />
                         </div>
                         <div>
-                            <input className="bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-800 border-1 border-x-neutral-500/50 border-y-neutral-700/70 w-24 h-10 rounded-lg" type="button" value="Confirmar" />
+                            <input type="button" value="CONFIRMAR" />
                         </div>
                     </div>
                 </div>

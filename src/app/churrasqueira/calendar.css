@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Fragment+Mono:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@300..700&family=Fragment+Mono:ital@0;1&display=swap');
+
+.calendar-page * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: "Comfortaa", sans-serif;
+}
+
+html .calendar-page {
+    font-size: 62.5%;
+}
+
+.calendar-app {
+    margin-top: clamp(3rem, 3vh, 5rem);
+    width: 60%;
+    min-width: 90vmin;
+    background-color: #1e242d;
+    padding: 1rem;
+    border-radius: 3rem;
+    border: 1rem solid #0f1319;
+    display: flex;
+    column-gap: 5rem;
+    transform-style: preserve-3d;
+}
+
+.calendar-app::after {
+    content: "";
+    position: absolute;
+    bottom: -12rem;
+    left: 50%;
+    transform: translate(-50%) rotateX(50deg);
+    width: 90%;
+    height: 16rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20rem;
+    filter: blur(4rem);
+}
+
+.calendar {
+    width: 40%;
+}
+
+.heading {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: clamp(3rem, 5.8cqi, 7rem);
+    color: #fff;
+    letter-spacing: 0.3rem;
+}
+
+.navigate-date {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    margin: 3.5rem 0;
+}
+
+.navigate-date h2 {
+    font-size: clamp(1rem, 1.5cqi, 2.5rem);
+    color: #bbb;
+}
+
+.buttons {
+    display: flex;
+    column-gap: 1rem;
+    margin-left: auto;
+    margin-right: 1rem;
+}
+
+.buttons .lucide-chevron-left,
+.buttons .lucide-chevron-right {
+    width: clamp(1.4rem, 2cqi, 2.5rem);
+    height: clamp(1.4rem, 2cqi, 2.5rem);
+    padding: 10px;
+    background-color: #2c3542;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #c97f1a;
+    cursor: pointer;
+}
+
+.weekdays {
+    width: 100%;
+    min-width: 13.5rem;
+    display: flex;
+    margin: 2rem 0;
+}
+
+.weekdays span {
+    width: calc(100% / 7);
+    font-size: clamp(0.5rem, 1vw, 0.8rem);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #78879e;
+    letter-spacing: 0.1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.days {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 13.5rem;
+}
+
+.days span {
+    font-size: clamp(1rem, 1cqi, 1.6rem);
+    width: calc(100% / 7);
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ddd;
+    cursor: pointer;
+    text-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.current-day {
+    background-color: #ef9011;
+    border-radius: 50%;
+    box-shadow: 0 0 1.5rem 1rem rgba(239, 144, 17, 0.3);
+}
+
+.events {
+    width: 60%;
+    height: 100%;
+    padding: 3rem 0;
+}
+
+.event-popup {
+    position: absolute;
+    top: 38%;
+    left: 0.6rem;
+    background-color: #161b22;
+    width: clamp(25rem, 21cqi, 40rem);
+    aspect-ratio: 10 / 9;
+    border-radius: 1rem;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2rem;
+}
+
+.time-input {
+    display: flex;
+    column-gap: 1rem;
+}
+
+.event-popup-time {
+    width: clamp(4rem, 4cqi, 7rem);
+    background-color: #00a3ff;
+    color: #fff;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: clamp(1.5rem, 1.5cqi, 2.2rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 1.5rem rgba(0, 163, 255, 0.2);
+    letter-spacing: 0.1rem;
+}
+
+.time-input input {
+    background-color: transparent;
+    border: none;
+    border-top: .2rem solid #00a3ff;
+    border-bottom: .2rem solid #00a3ff;
+    color: #fff;
+    width: clamp(4rem, 4cqi, 7rem);
+    height: 3rem;
+    text-align: center;
+    font-size: clamp(1.2rem, 1.2cqi, 1.6rem);
+}
+
+.time-input input[type="number"]::-webkit-outer-spin-button,
+.time-input input[type="number"]::-webkit-inner-spin-button {
+    appearance: none;
+}
+
+.event-popup textarea {
+    width: clamp(15rem, 15cqi, 25rem);
+    aspect-ratio: 5 / 2;
+    resize: none;
+    background-color: #0f1319;
+    border: none;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: #78879e;
+    transition: border 0.5s;
+    scrollbar-width: none;
+}
+
+.event-popup textarea:focus {
+    border: 0.1rem solid #00a3ff;
+}
+
+.event-popup textarea::placeholder {
+    font-size: clamp(1rem, .8cqi, 1.2rem);
+    color: #78879e;
+}
+
+.event-popup textarea:focus::placeholder {
+    color: transparent;
+}
+
+.event-popup-btn {
+    width: clamp(15rem, 15cqi, 25rem);
+    height: 3rem;
+    background-color: #ef9011;
+    color: #fff;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: clamp(1.5rem, 1.5cqi, 2.2rem);
+    letter-spacing: 0.1rem;
+    border: none;
+    box-shadow: 0 0 1.5rem 1rem rgba(239, 144, 17, 0.2);
+    cursor: pointer;
+}
+
+.event-popup-btn:active {
+    transform: translateY(0.1rem);
+}
+
+.close-event-popup {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.lucide-x {
+    width: 2rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.event {
+    width: 100%;
+    height: 7rem;
+    background-color: #00a3ff;
+    padding: 1.5rem 0;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.event-date-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    border-right: 0.1rem solid rgba(255, 255, 255, 0.5);
+}
+
+.event-date {
+    font-size: clamp(0.8rem, 1cqi, 1.2rem);
+    color: #ddd;
+    padding-top: 1rem;
+}
+
+.event-time {
+    font-size: clamp(0.8rem, 1.6cqi, 1.6rem);
+    line-height: clamp (2rem, 2.5cqi, 4rem);
+    font-weight: bold;
+    color: #fff;
+}
+
+.event-text {
+    font-size: clamp(0.8rem, 1cqi, 1.4rem);
+    line-height: 2rem;
+    color: #fff;
+    width: 75%;
+    padding: 0 3rem 0 1rem;
+    overflow-wrap: break-word;
+}
+
+.event-buttons {
+    position: absolute;
+    transform: translate(-50%);
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.lucide-pen-line,
+.lucide-message-square-x {
+    width: 1rem;
+    color: #fff;
+
+}
+
+
+@media (max-width: 600px) {
+    .calendar-app {
+        margin-top: 18rem;
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+
+    .calendar,
+    .events {
+        width: 100%;
+    }
+
+    .event-popup {
+        scale: 80%;
+        left: -2rem;
+        top: 10rem;
+    }
+}
